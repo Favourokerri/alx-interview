@@ -6,7 +6,7 @@ def validUTF8(data):
         # Iterate through each integer in the data
         for num in data:
             # Check if the integer represents a valid UTF-8 character
-            binary_repr = bin(num)[2:].rjust(8, '0')  # Convert to binary representation with leading zeros
+            binary_repr = bin(num)[2:].rjust(8, '0')
             if binary_repr[0] == '0':
                 continue  # Single-byte character, move to the next integer
             elif binary_repr[:3] == '110' and len(binary_repr) >= 11:
