@@ -4,7 +4,9 @@
 
 def makeChange(coins, total):
     """ fewest coin to  meet total """
-    max_num = max(coins)
+    if total <= 0:
+        return 0
+
     number_of_coins = 0
     new_total = 0
     sorted_coin = sorted(coins, reverse=True)
@@ -15,7 +17,6 @@ def makeChange(coins, total):
             number_of_coins += 1
         if new_total == total:
             return number_of_coins
-            break
 
     if new_total != total:
         return -1
